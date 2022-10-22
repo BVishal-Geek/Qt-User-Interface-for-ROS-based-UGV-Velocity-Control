@@ -1,0 +1,734 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1144</width>
+    <height>712</height>
+   </rect>
+  </property>
+  <property name="sizeIncrement">
+   <size>
+    <width>710</width>
+    <height>510</height>
+   </size>
+  </property>
+  <property name="baseSize">
+   <size>
+    <width>435</width>
+    <height>200</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>APOSTLE</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../../../../Downloads/WhatsApp Image 2022-04-07 at 2.51.33 PM.jpeg</normaloff>../../../../Downloads/WhatsApp Image 2022-04-07 at 2.51.33 PM.jpeg</iconset>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <property name="sizeConstraint">
+    <enum>QLayout::SetFixedSize</enum>
+   </property>
+   <item>
+    <widget class="QTabWidget" name="SlamLaunch">
+     <property name="focusPolicy">
+      <enum>Qt::ClickFocus</enum>
+     </property>
+     <property name="tabShape">
+      <enum>QTabWidget::Rounded</enum>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="Control">
+      <attribute name="title">
+       <string>Control - Camera</string>
+      </attribute>
+      <widget class="QSlider" name="Speed_linear_x">
+       <property name="geometry">
+        <rect>
+         <x>550</x>
+         <y>20</y>
+         <width>20</width>
+         <height>511</height>
+        </rect>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
+       <property name="minimum">
+        <number>-1000</number>
+       </property>
+       <property name="maximum">
+        <number>1000</number>
+       </property>
+       <property name="singleStep">
+        <number>10</number>
+       </property>
+       <property name="pageStep">
+        <number>100</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="tickPosition">
+        <enum>QSlider::NoTicks</enum>
+       </property>
+       <property name="tickInterval">
+        <number>0</number>
+       </property>
+      </widget>
+      <widget class="QSlider" name="angular_speed">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>580</y>
+         <width>961</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="minimum">
+        <number>-1000</number>
+       </property>
+       <property name="maximum">
+        <number>1000</number>
+       </property>
+       <property name="singleStep">
+        <number>10</number>
+       </property>
+       <property name="pageStep">
+        <number>100</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="tickPosition">
+        <enum>QSlider::NoTicks</enum>
+       </property>
+       <property name="tickInterval">
+        <number>0</number>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="linear_stop">
+       <property name="geometry">
+        <rect>
+         <x>490</x>
+         <y>260</y>
+         <width>41</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>0</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="angular_stop">
+       <property name="geometry">
+        <rect>
+         <x>540</x>
+         <y>610</y>
+         <width>41</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>0</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="control_combo_box">
+       <property name="geometry">
+        <rect>
+         <x>970</x>
+         <y>20</y>
+         <width>131</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <item>
+        <property name="text">
+         <string>None</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>/cmd_vel</string>
+        </property>
+       </item>
+      </widget>
+      <widget class="QLabel" name="linear_speed">
+       <property name="geometry">
+        <rect>
+         <x>600</x>
+         <y>260</y>
+         <width>71</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>0.0 m/s</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_4">
+       <property name="geometry">
+        <rect>
+         <x>530</x>
+         <y>550</y>
+         <width>81</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>0.0 rad/s</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="angular_Right">
+       <property name="geometry">
+        <rect>
+         <x>1060</x>
+         <y>570</y>
+         <width>41</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>&gt;</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="angular_left">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>570</y>
+         <width>41</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>&lt;</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="linear_decrease_x">
+       <property name="geometry">
+        <rect>
+         <x>490</x>
+         <y>500</y>
+         <width>41</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>-</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="linear_increase_x">
+       <property name="geometry">
+        <rect>
+         <x>490</x>
+         <y>20</y>
+         <width>41</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>+</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="Change_Linear_X_plus">
+       <property name="geometry">
+        <rect>
+         <x>590</x>
+         <y>20</y>
+         <width>81</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="minimum">
+        <double>1.000000000000000</double>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="Change_Linear_X_minus">
+       <property name="geometry">
+        <rect>
+         <x>590</x>
+         <y>500</y>
+         <width>81</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="minimum">
+        <double>-99.000000000000000</double>
+       </property>
+       <property name="maximum">
+        <double>-1.000000000000000</double>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="Change_angular_Z_plus">
+       <property name="geometry">
+        <rect>
+         <x>960</x>
+         <y>540</y>
+         <width>81</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="minimum">
+        <double>1.000000000000000</double>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="Change_angular_Z_minus">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>540</y>
+         <width>81</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="minimum">
+        <double>-99.000000000000000</double>
+       </property>
+       <property name="maximum">
+        <double>-1.000000000000000</double>
+       </property>
+      </widget>
+      <widget class="QLabel" name="camera_streaming_4">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>60</y>
+         <width>471</width>
+         <height>431</height>
+        </rect>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::WinPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <property name="lineWidth">
+        <number>1</number>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="check_the_box">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>121</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Camera Enable</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="Check_ping_connection">
+       <property name="geometry">
+        <rect>
+         <x>970</x>
+         <y>120</y>
+         <width>131</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Check Connection</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Connection_Status">
+       <property name="geometry">
+        <rect>
+         <x>770</x>
+         <y>20</y>
+         <width>41</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="autoFillBackground">
+        <bool>true</bool>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Box</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Mac_id">
+       <property name="geometry">
+        <rect>
+         <x>820</x>
+         <y>20</y>
+         <width>131</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Box</enum>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit">
+       <property name="geometry">
+        <rect>
+         <x>970</x>
+         <y>90</y>
+         <width>131</width>
+         <height>25</height>
+        </rect>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="Odom">
+      <attribute name="title">
+       <string>Odometry - Battery - SLAM </string>
+      </attribute>
+      <widget class="QLabel" name="motor1_name">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>57</y>
+         <width>67</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>MOTOR 1</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="motor2_name">
+       <property name="geometry">
+        <rect>
+         <x>480</x>
+         <y>60</y>
+         <width>67</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>MOTOR 2</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="motor4_name">
+       <property name="geometry">
+        <rect>
+         <x>480</x>
+         <y>310</y>
+         <width>67</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>MOTOR 4</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="motor3_name">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>310</y>
+         <width>67</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>MOTOR 3</string>
+       </property>
+      </widget>
+      <widget class="QProgressBar" name="Battery_Status">
+       <property name="geometry">
+        <rect>
+         <x>940</x>
+         <y>10</y>
+         <width>161</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::WheelFocus</enum>
+       </property>
+       <property name="value">
+        <number>0</number>
+       </property>
+      </widget>
+      <widget class="QLCDNumber" name="voltage_consumption">
+       <property name="geometry">
+        <rect>
+         <x>940</x>
+         <y>100</y>
+         <width>161</width>
+         <height>51</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLCDNumber" name="Current_consumption">
+       <property name="geometry">
+        <rect>
+         <x>940</x>
+         <y>210</y>
+         <width>161</width>
+         <height>51</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>940</x>
+         <y>70</y>
+         <width>67</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>VOLTAGE</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_13">
+       <property name="geometry">
+        <rect>
+         <x>940</x>
+         <y>180</y>
+         <width>67</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>CURRENT</string>
+       </property>
+      </widget>
+      <widget class="QLCDNumber" name="motor_speed_1">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>90</y>
+         <width>141</width>
+         <height>101</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="ok_motor_3">
+       <property name="geometry">
+        <rect>
+         <x>190</x>
+         <y>370</y>
+         <width>109</width>
+         <height>49</height>
+        </rect>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Box</enum>
+       </property>
+       <property name="text">
+        <string>           OK</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="ok_motor_1">
+       <property name="geometry">
+        <rect>
+         <x>190</x>
+         <y>120</y>
+         <width>109</width>
+         <height>49</height>
+        </rect>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Box</enum>
+       </property>
+       <property name="text">
+        <string>           OK</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="ok_motor_2">
+       <property name="geometry">
+        <rect>
+         <x>640</x>
+         <y>120</y>
+         <width>109</width>
+         <height>49</height>
+        </rect>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Box</enum>
+       </property>
+       <property name="text">
+        <string>           OK</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="ok_motor_4">
+       <property name="geometry">
+        <rect>
+         <x>640</x>
+         <y>370</y>
+         <width>109</width>
+         <height>49</height>
+        </rect>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Box</enum>
+       </property>
+       <property name="text">
+        <string>           OK</string>
+       </property>
+      </widget>
+      <widget class="QLCDNumber" name="motor_speed_4">
+       <property name="geometry">
+        <rect>
+         <x>480</x>
+         <y>340</y>
+         <width>141</width>
+         <height>101</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLCDNumber" name="motor_speed_3">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>340</y>
+         <width>141</width>
+         <height>101</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLCDNumber" name="motor_speed_2">
+       <property name="geometry">
+        <rect>
+         <x>480</x>
+         <y>90</y>
+         <width>141</width>
+         <height>101</height>
+        </rect>
+       </property>
+       <property name="mouseTracking">
+        <bool>true</bool>
+       </property>
+       <property name="toolTipDuration">
+        <number>-1</number>
+       </property>
+       <property name="mode">
+        <enum>QLCDNumber::Dec</enum>
+       </property>
+       <property name="intValue" stdset="0">
+        <number>0</number>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="Start_map">
+       <property name="geometry">
+        <rect>
+         <x>300</x>
+         <y>490</y>
+         <width>111</width>
+         <height>71</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Start Mapping</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="Save_Map">
+       <property name="geometry">
+        <rect>
+         <x>540</x>
+         <y>490</y>
+         <width>111</width>
+         <height>71</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Save</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Map_name_const">
+       <property name="geometry">
+        <rect>
+         <x>700</x>
+         <y>510</y>
+         <width>81</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Map Name:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Map_path_const">
+       <property name="geometry">
+        <rect>
+         <x>700</x>
+         <y>550</y>
+         <width>81</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Map Path:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Note_points">
+       <property name="geometry">
+        <rect>
+         <x>700</x>
+         <y>590</y>
+         <width>401</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>NOTE:   Enter the full path, Where map has to be saved</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="Exit_Mapping">
+       <property name="geometry">
+        <rect>
+         <x>420</x>
+         <y>580</y>
+         <width>111</width>
+         <height>71</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Exit Mapping</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="Map_name_input">
+       <property name="geometry">
+        <rect>
+         <x>790</x>
+         <y>510</y>
+         <width>251</width>
+         <height>31</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="map_path_input">
+       <property name="geometry">
+        <rect>
+         <x>790</x>
+         <y>550</y>
+         <width>251</width>
+         <height>31</height>
+        </rect>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
